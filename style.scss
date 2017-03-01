@@ -4,6 +4,11 @@ $margin: 50px;
 $div-width: 100px;
 $font-standard:12px;
 
+@mixin border-radius($radius: 20px, $color: green){
+  border-radius: $radius;
+  background-color: $color;
+}
+
 body{
   background-color: black;
 }
@@ -14,6 +19,8 @@ h1{
 
 .middle{
   background-color: $blue2;
+  @include border-radius(50px, pink);
+
   margin: $margin + 100;
   width: $div-width;
   height: $div-width;
@@ -27,4 +34,8 @@ h1{
     }
 
   }
+}
+
+.bottom{
+  @extend .middle;
 }

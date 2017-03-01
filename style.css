@@ -4,15 +4,17 @@ body {
 h1 {
   color: #9FBFBF; }
 
-.middle {
+.middle, .bottom {
   background-color: #3b5b5b;
+  border-radius: 50px;
+  background-color: pink;
   margin: 150px;
   width: 100px;
   height: 100px;
   font-size: 16px; }
-  .middle h2 {
+  .middle h2, .bottom h2 {
     color: #d1f1f1; }
-    .middle h2 span {
+    .middle h2 span, .bottom h2 span {
       color: black; }
 
 /*# sourceMappingURL=style.css.map */
