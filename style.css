@@ -1,0 +1,18 @@
+body {
+  background-color: black; }
+
+h1 {
+  color: #9FBFBF; }
+
+.middle {
+  background-color: #3b5b5b;
+  margin: 150px;
+  width: 100px;
+  height: 100px;
+  font-size: 16px; }
+  .middle h2 {
+    color: #d1f1f1; }
+    .middle h2 span {
+      color: black; }
+
+/*# sourceMappingURL=style.css.map */

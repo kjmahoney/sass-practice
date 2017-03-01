@@ -1,0 +1,30 @@
+$blue:#9FBFBF;
+$blue2: $blue - 100;
+$margin: 50px;
+$div-width: 100px;
+$font-standard:12px;
+
+body{
+  background-color: black;
+}
+
+h1{
+  color:$blue;
+}
+
+.middle{
+  background-color: $blue2;
+  margin: $margin + 100;
+  width: $div-width;
+  height: $div-width;
+  font-size: $font-standard + 4;
+
+  h2{
+    color: $blue + 50;
+
+    span{
+      color: $blue2 - 100;
+    }
+
+  }
+}
