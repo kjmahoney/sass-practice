@@ -9,13 +9,31 @@ $font-standard:12px;
   background-color: $color;
 }
 
+$default-home: (
+margin: 25px,
+background-color: black,
+border: 1px solid yellow,
+color: yellow
+);
+
+$default-away: (
+margin: 40px,
+background-color: white,
+border: 1px solid black,
+color: yellow
+);
+
+
+///////////////////////////////////
 body{
-  background-color: black;
+  background-color: white;
 }
 
 h1{
   color:$blue;
 }
+
+
 
 .middle{
   background-color: $blue2;
@@ -34,6 +52,14 @@ h1{
     }
 
   }
+}
+
+.top{
+  @extend .middle;
+  margin: map-get($default-home, margin);
+  background-color: map-get($default-home, background-color);
+  border: map-get($default-home, border);
+  color: map-get($default-home, color);
 }
 
 .bottom{
