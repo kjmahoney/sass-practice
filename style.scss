@@ -13,18 +13,35 @@ $default-home: (
 margin: 25px,
 background-color: black,
 border: 1px solid yellow,
-color: yellow
+color: yellow,
+width: 100px,
+height: 100px
 );
 
 $default-away: (
-margin: 40px,
+margin: 25px,
 background-color: white,
 border: 1px solid black,
-color: yellow
+color: yellow,
+width: 100px,
+height: 100px
 );
 
+@mixin auto-config($style:"home", $config: $default-home){
+  @if $style == "home" {
+    $config: $default-home
+  }@else{
+    $config: $default-away
+  }
 
-///////////////////////////////////
+  margin: map-get($config, margin);
+  background-color: map-get($config, background-color);
+  border: map-get($config, border);
+  color: map-get($config, color);
+
+}
+
+
 body{
   background-color: white;
 }
@@ -38,11 +55,8 @@ h1{
 .middle{
   background-color: $blue2;
   @include border-radius(50px, pink);
+  @include auto-config("home");
 
-  margin: $margin + 100;
-  width: $div-width;
-  height: $div-width;
-  font-size: $font-standard + 4;
 
   h2{
     color: $blue + 50;
@@ -56,10 +70,7 @@ h1{
 
 .top{
   @extend .middle;
-  margin: map-get($default-home, margin);
-  background-color: map-get($default-home, background-color);
-  border: map-get($default-home, border);
-  color: map-get($default-home, color);
+
 }
 
 .bottom{
