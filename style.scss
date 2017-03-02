@@ -1,21 +1,16 @@
+//Settings/////////
 $blue:#9FBFBF;
 $blue2: $blue - 100;
-$margin: 50px;
-$div-width: 100px;
 $font-standard:12px;
-
-@mixin border-radius($radius: 20px, $color: green){
-  border-radius: $radius;
-  background-color: $color;
-}
+$standard-width: 200px;
 
 $default-home: (
 margin: 25px,
 background-color: black,
 border: 1px solid yellow,
 color: yellow,
-width: 100px,
-height: 100px
+width: $standard-width,
+height: $standard-width
 );
 
 $default-away: (
@@ -23,10 +18,11 @@ margin: 25px,
 background-color: white,
 border: 1px solid black,
 color: yellow,
-width: 100px,
-height: 100px
+width: $standard-width,
+height: $standard-width
 );
 
+//Mixins/////////////////////
 @mixin auto-config($style:"home", $config: $default-home){
   @if $style == "home" {
     $config: $default-home
@@ -38,10 +34,16 @@ height: 100px
   background-color: map-get($config, background-color);
   border: map-get($config, border);
   color: map-get($config, color);
+  width: map-get($config, width);
+  height: map-get($config, height);
+}
 
+@mixin border-radius($radius: 20px, $color: green){
+  border-radius: $radius;
 }
 
 
+//Elements/////////////////
 body{
   background-color: white;
 }
@@ -50,13 +52,9 @@ h1{
   color:$blue;
 }
 
-
-
 .middle{
-  background-color: $blue2;
   @include border-radius(50px, pink);
   @include auto-config("home");
-
 
   h2{
     color: $blue + 50;
