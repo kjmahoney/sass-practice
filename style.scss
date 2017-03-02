@@ -2,19 +2,20 @@
 $blue:#9FBFBF;
 $blue2: $blue - 100;
 $font-standard:12px;
-$standard-width: 200px;
+$std-width: 200px;
+$std-margin: 25px;
 
 $default-home: (
-  margin: 25px,
+  margin: $std-margin,
   background-color: black,
   border: 1px solid yellow,
   color: yellow,
-  width: $standard-width,
-  height: $standard-width
+  width: $std-width,
+  height: $std-width
 );
 
 $default-away: (
-  margin: 25px,
+  margin: $std-margin,
   background-color: white,
   border: 1px solid black,
   color: yellow,
